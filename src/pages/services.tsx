@@ -183,7 +183,7 @@ const Services = () => {
           >
             <p className=' text-2xl lg:text-[36px] font-semibold'>Artizen</p>
             <Image src={artizen} alt='Image' />
-            <div className='flex justify-between text-[12px] lg:text-base w-[300px] lg:w-[220px]'>
+            <div className='flex justify-between text-[12px] lg:text-base w-[200px] lg:w-[220px]'>
               <div className='border rounded-full px-5 py-3'>Blockchain</div>
               <div className='border rounded-full px-8 py-3'>NFT</div>
             </div>
@@ -194,7 +194,7 @@ const Services = () => {
           >
             <p className=' text-2xl lg:text-[36px] font-semibold'>Globachain</p>
             <Image src={globalChain} alt='Image' />
-            <div className='flex justify-between text-[12px] lg:text-base w-[300px] lg:w-[220px]'>
+            <div className='flex justify-between text-[12px] lg:text-base w-[200px] lg:w-[220px]'>
               <div className='border rounded-full px-5 py-3'>Blockchain</div>
               <div className='border rounded-full px-8 py-3'>NFT</div>
             </div>
@@ -205,7 +205,7 @@ const Services = () => {
           >
             <p className=' text-2xl lg:text-[36px] font-semibold'>Tixhive</p>
             <Image src={artizen} alt='Image' />
-            <div className='flex justify-between text-[12px] lg:text-base w-[300px] lg:w-[337px]'>
+            <div className='flex justify-between text-[12px] lg:text-base w-[280px] lg:w-[337px]'>
               <div className='border rounded-full px-5 py-3 '>NFTs</div>
               <div className='border rounded-full px-5 py-3 '>Blockchain</div>
               <div className='border rounded-full px-5 py-3 '>Assets</div>

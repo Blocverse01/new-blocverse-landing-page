@@ -100,6 +100,24 @@ const Blog = () => {
           View All
         </a>
       </div>
+
+      <div className='mt-[72px] text-bv-black-1 font-clash py-[62px] px-6 bg-white rounded-[20px]'>
+        <h1 className=' text-[32px] lg:text-[40px] min-w-[304px] font-medium text-center  '>
+          Subscribe to our Newsletter
+        </h1>
+        <div className='mx-auto mt-10  relative w-full rounded-[100px] lg:w-[552px] lg:border lg:flex border-[#707070]'>
+          <input
+            type='text'
+            placeholder='Input your email address'
+            className=' rounded-tl-[100px] w-full lg:w-[276px]  py-4 px-6 font-lato text-[20px] font-medium outline-none border lg:border-none rounded-bl-[100px] rounded-tr-[100px] rounded-br-[100px] lg:rounded-tr-none  lg:rounded-br-none'
+            name=''
+            id=''
+          />
+          <button className=' text-white w-full lg:mt-0 mt-[24px] font-lato font-semibold text-[16px]  rounded-tr-[100px] rounded-br-[100px] lg:rounded-tl-none py-4 lg:py-0 lg:rounded-bl-none mx-auto ml-auto lg:w-[276px] lg:text-[20px] rounded-tl-[100px] rounded-bl-[100px]  bg-bv-blue-1 '>
+            Experience our Multiverse!
+          </button>
+        </div>
+      </div>
     </section>
   );
 };
