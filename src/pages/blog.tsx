@@ -101,7 +101,10 @@ const Blog = () => {
         </a>
       </div>
 
-      <div className='mt-[72px] text-bv-black-1 font-clash py-[62px] px-6 bg-white rounded-[20px]'>
+      <motion.div
+        variants={textVariants}
+        className='mt-[72px] text-bv-black-1 font-clash py-[62px] px-6 bg-white rounded-[20px]'
+      >
         <h1 className=' text-[32px] lg:text-[40px] min-w-[304px] font-medium text-center  '>
           Subscribe to our Newsletter
         </h1>
@@ -117,7 +120,7 @@ const Blog = () => {
             Experience our Multiverse!
           </button>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
