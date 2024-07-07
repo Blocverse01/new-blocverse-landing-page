@@ -8,10 +8,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        clash: ["Clash Grotesk", "sans-serif"],
+        lato: ["Lato", "sans-serif"],
+      },
+      colors: {
+        bv: {
+          black: {
+            1: "#1A1A1A",
+          },
+          blue: {
+            1: "#13B3EF",
+            2: "#01AEEF",
+          },
+          extras: {
+            blue: "#13B3EF0A",
+          },
+        },
       },
     },
   },
