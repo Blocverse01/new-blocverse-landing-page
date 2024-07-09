@@ -72,7 +72,7 @@ const About = () => {
           <p className='font-lato mt-5 text-[16px] lg:text-[24px] leading-[24px] lg:leading-[32px] font-medium'>
             We envision a world empowered by decentralization and blockchain
             technology, where seamless innovation and widespread blockchain
-            adoption drive positive global impact. mt-5
+            adoption drive positive global impact.
           </p>
           <div className='absolute bottom-0 right-0'>
             <Rec4 />
