@@ -4,7 +4,7 @@ import Layout from "@/components/Layout";
 import world from "@/components/assets/world.png";
 import heroNoise from "@/components/assets/heroNoise.svg";
 import seamlessImg from "@/components/assets/seamlessImg.png";
-import innovationImg from "@/components/assets/innovationImg.png";
+import innovationImg from "@/components/assets/InnovationImg.png";
 import journeyImg from "@/components/assets/journeyImg.png";
 import mvpImg from "@/components/assets/mvpImg.png";
 import exploreImg from "@/components/assets/exploreImg.png";
