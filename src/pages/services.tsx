@@ -201,9 +201,9 @@ const Services = () => {
           >
             <p className=' text-2xl lg:text-[36px] font-semibold'>Globachain</p>
             <Image src={globalChain} alt='Image' />
-            <div className='flex justify-between text-[12px] lg:text-base w-[200px] lg:w-[240px]'>
+            <div className='flex justify-between text-[12px] lg:text-base w-[220px] lg:w-[280px]'>
               <div className='border rounded-full px-5 py-3'>Blockchain</div>
-              <div className='border rounded-full px-8 py-3'>NFT</div>
+              <div className='border rounded-full px-8 py-3'>Finance</div>
             </div>
           </motion.a>
           <motion.a
