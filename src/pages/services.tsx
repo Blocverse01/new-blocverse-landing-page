@@ -5,6 +5,10 @@ import Image from "next/image";
 import taas from "@/components/assets/taas.png";
 import artizen from "@/components/assets/artizen.png";
 import globalChain from "@/components/assets/globachain.png";
+import avc from "@/components/assets/avc.png";
+import tixhive from "@/components/assets/tixhive.png";
+import uwazi from "@/components/assets/uwazi.png";
+import web3gram from "@/components/assets/web3gram.png";
 import { motion } from "framer-motion";
 
 const fadeIn = {
@@ -165,9 +169,10 @@ const Services = () => {
           Featured Projects
         </h1>
         <div className='grid grid-cols-1 lg:grid-cols-2 mt-10 gap-[56px]'>
-          <motion.div
+          <motion.a
+            href='https://taas-platform.vercel.app/'
             variants={slideIn}
-            className='flex flex-col space-y-[32px]'
+            className='flex flex-col space-y-[32px] lg:hover:scale-105 duration-300  '
           >
             <p className=' text-2xl lg:text-[36px] font-semibold'>TAAS</p>
             <Image src={taas} alt='Image' />
@@ -176,10 +181,11 @@ const Services = () => {
               <div className='border rounded-full px-5 py-3'>Blockchain</div>
               <div className='border rounded-full px-5 py-3'>Assets</div>
             </div>
-          </motion.div>
-          <motion.div
+          </motion.a>
+          <motion.a
+            href='https://artizen-dun.vercel.app/'
             variants={slideIn}
-            className='flex flex-col space-y-[32px]'
+            className='flex flex-col space-y-[32px] lg:hover:scale-105 duration-300  '
           >
             <p className=' text-2xl lg:text-[36px] font-semibold'>Artizen</p>
             <Image src={artizen} alt='Image' />
@@ -187,30 +193,71 @@ const Services = () => {
               <div className='border rounded-full px-5 py-3'>Blockchain</div>
               <div className='border rounded-full px-8 py-3'>NFT</div>
             </div>
-          </motion.div>
-          <motion.div
+          </motion.a>
+          <motion.a
+            href='https://www.globachain.com/'
             variants={slideIn}
-            className='flex flex-col space-y-[32px]'
+            className='flex flex-col space-y-[32px] lg:hover:scale-105 duration-300  '
           >
             <p className=' text-2xl lg:text-[36px] font-semibold'>Globachain</p>
             <Image src={globalChain} alt='Image' />
-            <div className='flex justify-between text-[12px] lg:text-base w-[200px] lg:w-[220px]'>
+            <div className='flex justify-between text-[12px] lg:text-base w-[200px] lg:w-[240px]'>
               <div className='border rounded-full px-5 py-3'>Blockchain</div>
               <div className='border rounded-full px-8 py-3'>NFT</div>
             </div>
-          </motion.div>
-          <motion.div
+          </motion.a>
+          <motion.a
+            href='https://www.tixhive.com/'
             variants={slideIn}
-            className='flex flex-col space-y-[32px]'
+            className='flex flex-col space-y-[32px] lg:hover:scale-105 duration-300  '
           >
             <p className=' text-2xl lg:text-[36px] font-semibold'>Tixhive</p>
-            <Image src={artizen} alt='Image' />
+            <Image src={tixhive} alt='Image' />
             <div className='flex justify-between text-[12px] lg:text-base w-[280px] lg:w-[337px]'>
               <div className='border rounded-full px-5 py-3 '>NFTs</div>
               <div className='border rounded-full px-5 py-3 '>Blockchain</div>
               <div className='border rounded-full px-5 py-3 '>Assets</div>
             </div>
-          </motion.div>
+          </motion.a>
+          <motion.a
+            href='http://uwazi-frontend.vercel.app/'
+            variants={slideIn}
+            className='flex flex-col space-y-[32px] lg:hover:scale-150 duration-300  '
+          >
+            <p className=' text-2xl lg:text-[36px] font-semibold'>Uwazi</p>
+            <Image src={uwazi} alt='Image' />
+            <div className='flex justify-between text-[12px] lg:text-base  w-[200px] lg:w-[240px]'>
+              <div className='border rounded-full px-5 py-3 '>Finance</div>
+              <div className='border rounded-full px-5 py-3 '>Blockchain</div>
+            </div>
+          </motion.a>
+          <motion.a
+            href='https://africanvaluables.com/'
+            variants={slideIn}
+            className='flex flex-col space-y-[32px] lg:hover:scale-105 duration-300  '
+          >
+            <p className=' text-2xl lg:text-[36px] font-semibold'>
+              African Valuables Collective
+            </p>
+            <Image src={avc} alt='Image' />
+            <div className='flex justify-between text-[12px] lg:text-base w-[280px] lg:w-[337px]'>
+              <div className='border rounded-full px-5 py-3 '>NFTs</div>
+              <div className='border rounded-full px-5 py-3 '>Blockchain</div>
+              <div className='border rounded-full px-5 py-3 '>Assets</div>
+            </div>
+          </motion.a>
+          <motion.a
+            href='https://www.web3gram.live/'
+            variants={slideIn}
+            className='flex flex-col space-y-[32px] lg:hover:scale-105 duration-300  '
+          >
+            <p className=' text-2xl lg:text-[36px] font-semibold'>Web3Gram</p>
+            <Image src={web3gram} alt='Image' />
+            <div className='flex justify-between text-[12px] lg:text-base  w-[200px] lg:w-[240px]'>
+              <div className='border rounded-full px-5 py-3 '>Storage</div>
+              <div className='border rounded-full px-5 py-3 '>Blockchain</div>
+            </div>
+          </motion.a>
         </div>
       </motion.section>
     </div>
