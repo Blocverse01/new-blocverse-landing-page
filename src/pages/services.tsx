@@ -10,6 +10,7 @@ import tixhive from "@/components/assets/tixhive.png";
 import uwazi from "@/components/assets/uwazi.png";
 import web3gram from "@/components/assets/web3gram.png";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const fadeIn = {
   hidden: { opacity: 0 },
@@ -49,9 +50,12 @@ const Services = () => {
           <p className='font-clash text-[24px] lg:text-[32px]'>
             Digital Assets & Tokenization
           </p>
-          <p className=' bg-bv-blue-1 border text-white border-white rounded-[100px] font-lato text-sm lg:text-xl px-8 py-4 w-fit'>
-            Enter the multiverse!
-          </p>
+          <Link
+            href='/contact-us'
+            className=' bg-bv-blue-1 border text-white border-white rounded-[100px] font-lato text-sm lg:text-xl px-8 py-4 w-fit'
+          >
+            Build with us
+          </Link>
         </motion.div>
         <motion.div
           variants={slideIn}

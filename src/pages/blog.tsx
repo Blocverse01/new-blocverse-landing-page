@@ -3,6 +3,7 @@ import React, { ReactNode, useState, useEffect } from "react";
 import axios from "axios";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { BeatLoader } from "react-spinners"; // Import the loader
 
 interface Article {
   title: string;
@@ -12,9 +13,11 @@ interface Article {
 
 const Blog = () => {
   const [articles, setArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState<boolean>(true); // Add loading state
 
   useEffect(() => {
     const fetchArticles = async () => {
+      setLoading(true); // Set loading to true when fetching starts
       try {
         const response = await axios.get(
           "https://blog.blocverse.com/wp-json/wp/v2/posts",
@@ -42,6 +45,8 @@ const Blog = () => {
         setArticles(newArticles);
       } catch (error) {
         console.error(error);
+      } finally {
+        setLoading(false); // Set loading to false when fetching ends
       }
     };
 
@@ -67,31 +72,37 @@ const Blog = () => {
       <h3 className='font-medium text-[32px] lg:text-[56px] font-clash'>
         Our Blog
       </h3>
-      <div className='grid grid-cols-1 lg:grid-cols-3 mt-10 gap-[48px]'>
-        {articles.map((article, index) => (
-          <motion.a
-            href={article.articleLink}
-            key={index}
-            className='flex flex-col lg:hover:scale-110 duration-200 leading-[24px] lg:leading-[32px] text-[20px] font-semibold lg:text-[24px] space-y-6 lg:space-y-8'
-            initial='hidden'
-            animate='visible'
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-          >
-            <motion.div variants={imageVariants}>
-              <Image
-                src={article.imageLink}
-                alt={article.title}
-                width={500}
-                height={300}
-                priority={true}
-              />
-            </motion.div>
-            <motion.div variants={textVariants}>
-              <h3 className='capitalize'>{article.title.toLowerCase()}</h3>
-            </motion.div>
-          </motion.a>
-        ))}
-      </div>
+      {loading ? ( // Display loader when loading is true
+        <div className='flex justify-center items-center h-64'>
+          <BeatLoader color='#fff' loading={loading} size={15} />
+        </div>
+      ) : (
+        <div className='grid grid-cols-1 lg:grid-cols-3 mt-10 gap-[48px]'>
+          {articles.map((article, index) => (
+            <motion.a
+              href={article.articleLink}
+              key={index}
+              className='flex flex-col lg:hover:scale-110 duration-200 leading-[24px] lg:leading-[32px] text-[20px] font-semibold lg:text-[24px] space-y-6 lg:space-y-8'
+              initial='hidden'
+              animate='visible'
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <motion.div variants={imageVariants}>
+                <Image
+                  src={article.imageLink}
+                  alt={article.title}
+                  width={500}
+                  height={300}
+                  priority={true}
+                />
+              </motion.div>
+              <motion.div variants={textVariants}>
+                <h3 className='capitalize'>{article.title.toLowerCase()}</h3>
+              </motion.div>
+            </motion.a>
+          ))}
+        </div>
+      )}
       <div className='mt-12'>
         <a
           href='https://blog.blocverse.com'
