@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
       </div>
       <p className='lg:text-center text-sm lg:text-base text-white font-medium'>
-        2024 Blocverse. All rights reserved.
+        2025 Blocverse. All rights reserved.
       </p>
     </div>
   );
