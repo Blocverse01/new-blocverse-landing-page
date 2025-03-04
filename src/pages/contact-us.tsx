@@ -7,51 +7,67 @@ import noise2 from "@/components/assets/noise2.svg";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {
+  contactFormSchema,
+  type ContactFormData,
+} from "@/schemas/contactSchema";
+import { z } from "zod";
 
 const ContactUs = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     message: "",
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const loadingToast = toast.loading("Sending message...");
 
     try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-        },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
+      const validatedData = contactFormSchema.parse(formData);
+      const loadingToast = toast.loading("Sending message...");
 
-      toast.update(loadingToast, {
-        render: "Message sent successfully!",
-        type: "success",
-        isLoading: false,
-        autoClose: 3000,
-      });
-      setFormData({ name: "", email: "", message: "" });
+      try {
+        await emailjs.send(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+          {
+            from_name: validatedData.name,
+            from_email: validatedData.email,
+            message: validatedData.message,
+          },
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        );
+
+        toast.update(loadingToast, {
+          render: "Message sent successfully!",
+          type: "success",
+          isLoading: false,
+          autoClose: 3000,
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } catch (error) {
+        toast.update(loadingToast, {
+          render: "Failed to send message. Please try again.",
+          type: "error",
+          isLoading: false,
+          autoClose: 3000,
+        });
+      }
     } catch (error) {
-      toast.update(loadingToast, {
-        render: "Failed to send message. Please try again.",
-        type: "error",
-        isLoading: false,
-        autoClose: 3000,
-      });
+      if (error instanceof z.ZodError) {
+        toast.error(error.errors[0].message);
+      } else {
+        toast.error("An unexpected error occurred");
+      }
     }
   };
 
