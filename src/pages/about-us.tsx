@@ -88,17 +88,38 @@ const About = () => {
         <p className=' text-[32px] lg:text-[48px] font-medium'>
           Our Core Values
         </p>
-        <p className='font-lato mt-5 font-medium text-base leading-[24px] lg:leading-[36px] lg:text-[24px]'>
-          At Blocverse, our mission is to empower individuals and businesses
-          through innovative and problem-solving blockchain utility products
-          while fostering talent growth and development. At Blocverse, our
-          mission is to empower individuals and businesses through innovative
-          and problem-solving blockchain utility products while fostering talent
-          growth and development.At Blocverse, our mission is to empower
-          individuals and businesses through innovative and problem-solving
-          blockchain utility products while fostering talent growth and
-          development.
-        </p>
+        <div className='grid mt-4 grid-cols-1  md:grid-cols-3 gap-6'>
+          <div>
+            <p className=' text-[20px] lg:text-[28px] font-semibold'>
+              Innovation with Purpose
+            </p>
+            <p className=' mt-2 md:text-[20px]'>
+              We challenge the status quo by creating blockchain solutions that
+              are not just advanced, but truly useful—simplifying adoption and
+              delivering real value to everyday people and businesses.
+            </p>
+          </div>
+          <div>
+            <p className=' text-[20px] lg:text-[28px] font-semibold'>
+              User-First Approach
+            </p>
+            <p className=' mt-2 md:text-[20px]'>
+              We listen, learn, and design around the needs of our users, making
+              blockchain technology seamless, accessible, and impactful in the
+              real world.
+            </p>
+          </div>
+          <div>
+            <p className=' text-[20px] lg:text-[28px] font-semibold'>
+              Talent Growth and Excellence
+            </p>
+            <p className=' mt-2 md:text-[20px]'>
+              We invest in people. By nurturing talent and encouraging
+              continuous learning, we build a team capable of driving innovation
+              and setting new standards in blockchain technology.
+            </p>
+          </div>
+        </div>
       </motion.section>
     </motion.div>
   );
